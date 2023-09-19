@@ -1,0 +1,43 @@
+section{
+background-color: rgba(240, 239, 237, 0.497);
+padding: 25px;
+}
+
+form{
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+small{
+    
+    font-size: 15px;
+    color: red;
+}
+
+button{
+    font-size: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.buttons #home{
+    margin-left: 60px;
+}
+
+.col-md-4{
+    margin-left: 50px;
+}
+
+.col-md-2 {
+    width: 350px;
+}
+
+.buttons a{
+    color: rgb(113, 112, 112);
+    text-decoration: none;
+}
+
+.buttons a:hover{
+    color: rgb(161, 156, 156);
+    text-decoration: underline;
+}

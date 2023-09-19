@@ -1,0 +1,149 @@
+<div class="containermaster">
+    <div class="containerfilter">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th id="th1" scope="col">Tipo</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr *ngFor="let produto of listaFiltroTipo.values()">
+                    <div class="form-check">
+                        <td>
+                            <input class="form-check-input " value="{{ produto.tipo }}" type="checkbox"
+                                [checked]="produto.selected" (change)="filtroTipo(produto.tipo)" />
+
+                            <label class="form-check-label " for="flexCheckChecked"> {{ produto.tipo }}</label>
+                        </td>
+                    </div>
+                </tr>
+            </tbody>
+
+            <thead>
+                <tr>
+                    <th id="th2" scope="col">Cor</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr *ngFor="let produto of listaFiltroCor.values()">
+                    <div class="form-check">
+                        <td>
+                            <input class="form-check-input " value="{{ produto.cor }}" type="checkbox"
+                                [checked]="produto.selected" (change)="filtroCor(produto.cor)" />
+
+                            <label class="form-check-label" for="flexCheckChecked"> {{ produto.cor }}</label>
+                        </td>
+                    </div>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <h1>Homem</h1>
+        <h3 class="ajustes">Total de resultados: {{ listaProdutos.length}}</h3>
+        <h4 *ngIf="listaProdutos.length === 0">Não existem produtos que obedeçam ao critério de pesquisa!</h4>
+        <div class="container text-center">
+            <div class="row row-cols-3 alinhamento">
+                <div class="container mt-5" id="imagens" *ngFor="let produto of listaProdutos">
+
+                    <p class="star" (click)="toggleStar(produto.id!)" data-bs-dismiss="modal" data-bs-toggle="modal"
+                        data-bs-target='#staticBackdropConfirm'>
+                        <i [ngClass]="isMyWish(produto.id!) ? 'fas fa-star': 'far fa-star'"></i>
+                    </p>
+
+                    <div data-bs-toggle="modal" data-bs-target="#staticBackdrop1" class="col"
+                        (click)="mostraDetalhe(produto.id!)">
+
+                        <img id="imgprincipal" class="img-fluid" src="/assets/pictures/{{ produto.foto_principal }}"
+                            alt="produtos variados">
+
+                        <img id="imgsecundaria" class="img-fluid" src="/assets/pictures/{{ produto.foto_secundaria }}"
+                            alt="produtos variados">
+
+                    </div>
+
+                    <div class="container-fluid">
+                        <h3>{{produto.marca}}</h3>
+                        <h5>{{produto.nome}}</h5>
+                        <h1>{{produto.preco}}€</h1>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination pagination-lg justify-content-end">
+        <li class="page-item"><a class="configpagination page-link" href="produto?page=1&limit=6">Page 1</a></li>
+        <li class="page-item"><a class="configpagination page-link" href="produto?page=2&limit=6">Page 2</a></li>
+        <li class="page-item"><a class="configpagination page-link" href="produto?page=3&limit=6">Page 3</a></li>
+    </ul>
+</nav>
+
+
+
+
+<!-- Modal -->
+
+<div class="modal" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-fullscreen">
+
+
+        <div class="modal-content">
+            <div class="container" style="max-width: 1700px;">
+                <app-header></app-header>
+
+                <div id="detalheproduto" class="modal-body container-fluid">
+
+                    <h1 id="marca">{{info.marca}}</h1>
+                    <p id="nome">{{info.nome}}</p>
+                    <img id="imgprincipal" class="img-fluid" src="/assets/pictures/{{ info.foto_principal }}"
+                        alt="produtos variados">
+                    <img id="imgsecundaria" class="img-fluid" src="/assets/pictures/{{ info.foto_secundaria }}"
+                        alt="produtos variados">
+                    <p id="tipo">
+                        {{info.tipo_de_produto}} {{info.cor}}
+                    </p>
+                    <p id="preco">{{info.preco}}€</p>
+                    <p id="descricao">{{info.descricao}}</p>
+
+                    <app-footer></app-footer>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Modal onfirmação -->
+<div class="modal fade" id="staticBackdropConfirm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h1 *ngIf="!existInMyWish" class="modal-title fs-3" id="staticBackdropLabel">Produto adicionado à
+                    Wishlist.
+                </h1>
+
+                <h1 *ngIf="existInMyWish" class="modal-title fs-3" id="staticBackdropLabel">Produto removido da
+                    Wishlist.
+                </h1>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close"
+                    style="width: 80px; font-size: 25px;">OK</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+<section class="container-fluid ">
+
+  <button id="addpessoa" (click)="openDialog(null)">Add Produto</button>
+
+  <mat-form-field class="container-fluid" appearance="fill">
+    <mat-label>Filtro</mat-label>
+    <input id="pesquisa" matInput [(ngModel)]="cpesquisa" (input)="processaPesquisa()">
+  </mat-form-field>
+
+  <table mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let produto"> {{produto.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> NOME </th>
+      <td mat-cell *matCellDef="let produto"> {{produto.nome}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="marca">
+      <th mat-header-cell *matHeaderCellDef> MARCA </th>
+      <td mat-cell *matCellDef="let produto"> {{produto.marca}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="tipo_de_produto">
+      <th mat-header-cell *matHeaderCellDef> TIPO PRODUTO </th>
+      <td mat-cell *matCellDef="let produto"> {{produto.tipo_de_produto }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cor">
+      <th mat-header-cell *matHeaderCellDef> COR </th>
+      <td mat-cell *matCellDef="let produto"> {{produto.cor }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="preco">
+      <th mat-header-cell *matHeaderCellDef> PREÇO </th>
+      <td mat-cell *matCellDef="let produto"> {{produto.preco }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="descricao">
+      <th mat-header-cell *matHeaderCellDef> DESCRIÇÃO </th>
+      <td mat-cell *matCellDef="let produto"> {{produto.descricao }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="foto_principal">
+      <th mat-header-cell *matHeaderCellDef> FOTO PRINCIPAL </th>
+      <td mat-cell *matCellDef="let produto"> <img class="img-fluid" src="/assets/pictures/{{ produto.foto_principal }}"
+          alt="produtos variados"> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="foto_secundaria">
+      <th mat-header-cell *matHeaderCellDef> FOTO SECUNDÁRIA </th>
+      <td mat-cell *matCellDef="let produto"><img class="img-fluid" src="/assets/pictures/{{ produto.foto_secundaria }}"
+          alt="produtos variados"> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="destaque">
+      <th mat-header-cell *matHeaderCellDef> DESTAQUE </th>
+      <td mat-cell *matCellDef="let produto"> {{produto.destaque ? '&#10004;' : '&#10005;'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="operacao">
+      <th mat-header-cell *matHeaderCellDef> OPERAÇÕES </th>
+      <td mat-cell *matCellDef="let produto">
+
+        <button mat-icon-button color="primary" (click)="editarProduto(produto)">
+          <mat-icon>edit</mat-icon>
+        </button>
+
+        <button mat-icon-button color="warn" (click)="excluirProduto(produto.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+
+
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+  </table>
+
+  <mat-paginator class="mat-elevation-z8 matpaginator" 
+  [length]="dataSource.length" 
+  [pageSize]="10"
+  [pageSizeOptions]="[5, 10, 25, 100]" 
+  aria-label="page index">
+  </mat-paginator>
+
+</section>

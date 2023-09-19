@@ -1,0 +1,116 @@
+@media screen and (max-width:2000px) {
+    #img{
+        width: 250px;
+        height: 350px;
+    }
+
+  }
+
+@media screen and (max-width:1300px) {
+    .propagandabanner {
+      display: none;      
+    }
+
+    #destaques{
+        display: flex;
+        justify-content: center;
+    }
+
+    #img{
+        width: 210px;
+        height: 300px;
+    }
+
+    #h1 {
+        font-size: 25px;
+    }
+  }
+
+
+
+h1 {
+    font-size: 45px;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.modal-content{
+    margin: auto;
+    width: 100%;
+}
+
+.banner {
+    position: relative;
+}
+
+.carousel{
+    margin: auto;
+    width: auto;
+}
+
+.propagandabanner {
+    font-size: 85px;
+    font-weight: bold;
+    position: absolute;
+    text-align: center;
+    color: white;
+    top: 50%;
+    left: 40%;
+    transition: translate(-50%, -50%);
+}
+
+.destaques {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 50px;
+    column-gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.produtoemdestaque {
+    width: 300px;
+    height: 400px;
+
+}
+
+.produtoemdestaque:hover {
+    border: solid 2px red;
+
+}
+
+#detalheproduto{
+    font-size: 20px;
+    text-align: center;
+}
+
+#detalheproduto #marca{
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+#detalheproduto #nome{
+    font-size: 35px;
+}
+
+#detalheproduto img{
+   padding: 20px;
+}
+
+#detalheproduto #tipo, #preco, #descricao{
+    font-size: 28px;
+    padding: 10px;
+    width: 900px;
+    margin: auto;
+}
+
+#descricao{
+    margin-bottom: 150px;
+}
+
+#produto {
+    padding: 20px;
+}

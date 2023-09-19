@@ -1,0 +1,18 @@
+section{
+    font-size: 20px;
+}
+
+h1{
+    text-align: center;
+    padding: 30px;
+}
+
+button{
+    font-size: 25px;
+}
+
+.modal-body input{
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: 10px;
+}

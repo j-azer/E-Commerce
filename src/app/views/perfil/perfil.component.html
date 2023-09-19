@@ -1,0 +1,58 @@
+<section>
+    <h1>Meu Perfil</h1>
+
+   
+
+    <p><strong>Nome:</strong> {{ utilizador.nome }}</p>
+    <p><strong>Email:</strong> {{ utilizador.email }}</p>
+    <p><strong>Senha:</strong> {{ utilizador.senha }}</p>
+    <p><strong>Morada:</strong> {{ utilizador.morada }}</p>
+    <p><strong>Código Postal:</strong> {{ utilizador.codigo_postal }}</p>
+    <p><strong>País:</strong> {{ utilizador.pais }}</p>
+
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+        Editar Info
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-1 " id="staticBackdropLabel"><i class="fa-regular fa-user"></i> - Meu Perfil </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Nome:</strong> <input type="text" name="" id=""  [(ngModel)]="utilizador.nome"></p>
+                    <p><strong>Email:</strong> <input type="text" name="" id="" [(ngModel)]="utilizador.email"></p>
+                    <p><strong>Senha:</strong> <input type="text" name="" id="" [(ngModel)]="utilizador.senha"></p>
+                    <p><strong>Morada:</strong> <input type="text" name="" id="" [(ngModel)]="utilizador.morada"></p>
+                    <p><strong>Código Postal:</strong> <input type="text" name="" id="" [(ngModel)]="utilizador.codigo_postal"></p>
+                    <p><strong>País:</strong> <input type="text" name="" id="" [(ngModel)]="utilizador.pais"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#staticBackdrop1" (click)="editarPerfil()">Salvar e Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal confirmação -->
+    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-3" id="staticBackdropLabel">Perfil alterado com sucesso!!!</h1>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

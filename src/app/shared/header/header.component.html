@@ -1,0 +1,82 @@
+<div class="container-fluid">
+    <header
+        class="container-fluid d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <li *ngIf="controlAdmin" id="admin" class="nav-item dropdown">
+            <a class="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">Administrador</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" id="crudproduto" href="produto-crud"> Produto </a></li>
+                <li><a class="dropdown-item" id="cruduser" href="utilizador-crud"> Utilizador </a></li>
+            </ul>
+        </li>
+
+
+        <ul id="menu" class=" nav col-12 col-md mb-2 justify-content-center mb-md-0">
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="produto" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">Homem</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="produto?filter=Casaco">Casacos</a></li>
+                    <li><a class="dropdown-item" href="produto?filter=Camisa">Camisas</a></li>
+                    <li><a class="dropdown-item" href="produto?filter=Calças">Calças</a></li>
+                    <li><a class="dropdown-item" href="produto?filter=Sweatshirt">Sweatshirts</a></li>
+                    <li><a class="dropdown-item" href="produto?filter=Polo">Polos</a></li>
+                    <li><a class="dropdown-item" href="produto?filter=Sapatos">Sapatos</a></li>
+                    <li><a class="dropdown-item" href="produto">Todos</a></li>
+                </ul>
+            </li>
+            <li>|</li>
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mulher</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Vestidos</a></li>
+                    <li><a class="dropdown-item" href="#">Blusões</a></li>
+                    <li><a class="dropdown-item" href="#">Coletes</a></li>
+                    <li><a class="dropdown-item" href="#">Jeans</a></li>
+                    <li><a class="dropdown-item" href="#">Saias</a></li>
+                    <li><a class="dropdown-item" href="#">Calções</a></li>
+                    <li><a class="dropdown-item" href="#">Lingerie</a></li>
+                    <li><a class="dropdown-item" href="#">Sapatos</a></li>
+                    <li><a class="dropdown-item" href="#">Malas</a></li>
+                    <li><a class="dropdown-item" href="#">Todos</a></li>
+                </ul>
+            </li>
+            <li id="logo">
+                <a href="">
+                    <img src="/assets/pictures/logo.png" alt="logo h&m" width="120px">
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Criança</a>
+                <ul id="visible" class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Menina | 6-14 Anos</a></li>
+                    <li><a class="dropdown-item" href="#">Menino | 6-14 Anos</a></li>
+                    <li><a class="dropdown-item" href="#">Bebé Menina | 3 Meses - 5 Anos</a></li>
+                    <li><a class="dropdown-item" href="#">Bebé Menino | 3 Meses - 5 Anos</a></li>
+                    <li><a class="dropdown-item" href="#">Mini | 0-12 Meses</a></li>
+                </ul>
+            </li>
+            <li>|</li>
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">Acessórios</a>
+                <ul id="visible" class="dropdown-menu ">
+                    <li><a class="dropdown-item" href="#">Malas</a></li>
+                    <li><a class="dropdown-item" href="#">Pulseiras</a></li>
+                    <li><a class="dropdown-item" href="#">Anéis</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <div id="user" class="col-md-3 text-end navbar1">
+
+            <input *ngIf="controlButton" type="text" value="Bem vindo(a), {{userName}}.">
+            <a *ngIf="controlButton" id="wishlist" href="carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a *ngIf="controlButton" id="wishlist" href="wishlist"><i class="fa-regular fa-clipboard"></i></a>
+            <a *ngIf="controlButton" id="perfil" href="perfil"><i class="fa-regular fa-user"></i></a>
+            <a *ngIf="!controlButton" id="registo" href="registo"><i class="fa-solid fa-user-plus"></i></a>
+            <a *ngIf="controlButton" id="logout" (click)="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+            <a *ngIf="!controlButton" id="login" href="login"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+
+        </div>
+    </header>
+</div>

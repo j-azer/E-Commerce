@@ -1,0 +1,53 @@
+<h1 *ngIf="!isChange" mat-dialog-title>Criar Produto </h1>
+<h1 *ngIf="isChange" mat-dialog-title>Editar Produto </h1>
+<div mat-dialog-content>
+ 
+  <mat-form-field>
+    <mat-label>Nome: </mat-label>
+    <input matInput [(ngModel)]="data.nome">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Marca: </mat-label>
+    <input matInput [(ngModel)]="data.marca">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Tipo Produto: </mat-label>
+    <input matInput [(ngModel)]="data.tipo_de_produto">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Cor: </mat-label>
+    <input matInput [(ngModel)]="data.cor">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Preço: </mat-label>
+    <input matInput [(ngModel)]="data.preco">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Descrição: </mat-label>
+    <input matInput [(ngModel)]="data.descricao">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Foto Principal: </mat-label>
+    <input matInput [(ngModel)]="data.foto_principal">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Foto Secundária: </mat-label>
+    <input matInput [(ngModel)]="data.foto_secundaria">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Destaque: </mat-label>
+    <input matInput [(ngModel)]="data.destaque">
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button *ngIf="!isChange" [mat-dialog-close]="data" cdkFocusInitial>Criar</button>
+  <button mat-button *ngIf="isChange" [mat-dialog-close]="data" cdkFocusInitial>Editar</button>
+</div>

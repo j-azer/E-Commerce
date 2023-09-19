@@ -1,0 +1,88 @@
+<div class="container-fluid">
+  <div class="container-fluid banner">
+
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+
+      <div class="container-fluid carousel-inner">
+
+        <div class="carousel-item active" data-bs-interval="3000">
+          <img src="/assets/pictures/slider1.jpg" class=" img-fluid " alt="céu azul e casaco">
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="/assets/pictures/slider2.jpg" class="img-fluid " alt="caminhando na estrada">
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="/assets/pictures/slider3.jpg" class="img-fluid " alt="jaqueta preta">
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+    </div>
+
+    <p class="propagandabanner">SALDOS</p>
+
+  </div>
+
+  <div class="container-fluid">
+
+    <h1 id="h1">DESTAQUES</h1>
+
+    <tbody id="destaques" class="destaques">
+      <tr *ngFor="let produto of listaProdutos">
+        <td id="produto" *ngIf="produto.destaque === true" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+          class="col" (click)="mostraDetalhe(produto.id!)">
+          <img id="img" class="img-fluid produtoemdestaque" src="/assets/pictures/{{ produto.foto_principal }}"
+            alt="produtos variados">
+        </td>
+      </tr>
+    </tbody>
+  </div>
+
+</div>
+
+<!-- Modal -->
+
+<div class="modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+  <div class="modal-dialog modal-fullscreen">
+
+    <div class="modal-content">
+
+      <div class="container" style="max-width: 1700px;">
+        <app-header></app-header>
+
+        <div id="detalheproduto" class="modal-body container-fluid">
+
+          <h1 id="marca">{{info.marca}}</h1>
+          <p id="nome">{{info.nome}}</p>
+          <img id="imgprincipal" class="img-fluid" src="/assets/pictures/{{ info.foto_principal }}"
+            alt="produtos variados">
+          <img id="imgsecundaria" class="img-fluid" src="/assets/pictures/{{ info.foto_secundaria }}"
+            alt="produtos variados">
+          <p id="tipo">
+            {{info.tipo_de_produto}} {{info.cor}}
+          </p>
+          <p id="preco">{{info.preco}}€</p>
+          <p id="descricao">{{info.descricao}}</p>
+
+          <app-footer></app-footer>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

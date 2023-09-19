@@ -1,0 +1,34 @@
+<section>
+    <div class="close">
+        <p><button id="retorna" (click)="returnHome()">X</button></p>
+
+        <h1>Controlo de acessos</h1>
+
+        <form class="row g-3" [formGroup]="formUtilizadores" (ngSubmit)="verificaUtilizador()">
+            <small
+                *ngIf="formUtilizadores.get('email')?.touched && formUtilizadores.get('email')?.invalid || formUtilizadores.get('senha')?.touched">
+                <ng-container *ngIf="formUtilizadores.get('email')?.hasError('required')">Os dois campos são de
+                    preenchimento obrigatório!</ng-container>
+                <ng-container *ngIf="formUtilizadores.get('email')?.errors?.['email']">O e-mail tem um formato
+                    incorreto!</ng-container>
+                <ng-container *ngIf="!userValid">Utilizador inexistente!</ng-container>
+            </small>
+            <div>
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="email" formControlName="email"
+                    placeholder="exemplo@email.com">
+            </div>
+            <div>
+                <label for="senha" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="senha" formControlName="senha"
+                    placeholder="digite sua senha">
+            </div>
+            <div class="col-12 buttons">
+                <button type="submit" class="btn btn-primary" id="cadastrar" [disabled]="formUtilizadores.invalid"
+                    data-bs-toggle="modal" data-bs-target="#exampleModal">Validar</button>
+                <a id="registo" href="registo">Registar</a>
+            </div>
+        </form>
+    </div>
+
+</section>

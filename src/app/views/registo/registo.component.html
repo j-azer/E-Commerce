@@ -1,0 +1,88 @@
+<section>
+    <h1>Registo de Utilizadores</h1>
+    <form class="row g-3" [formGroup]="formUtilizadores" (ngSubmit)="insereUtilizador()">
+        <div class="col-12">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" formControlName="nome"
+                placeholder="Digite seu primeiro e último nome">
+            <small *ngIf="formUtilizadores.get('nome')?.touched && formUtilizadores.get('nome')?.invalid">
+                <ng-container *ngIf="formUtilizadores.get('nome')?.hasError('required')">O campo é de preenchimento
+                    obrigatório!</ng-container>
+                <ng-container *ngIf="formUtilizadores.get('nome')?.errors?.['minlength']">O campo tem de possuir no
+                    mínimo 5 caracteres!</ng-container>
+                <ng-container *ngIf="formUtilizadores.get('nome')?.errors?.['maxlength']">O campo tem de possuir no
+                    máximo 20 caracteres!</ng-container>
+            </small>
+        </div>
+        <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" formControlName="email" placeholder="exemplo@email.com">
+            <small *ngIf="formUtilizadores.get('email')?.touched && formUtilizadores.get('email')?.invalid">
+                <ng-container *ngIf="formUtilizadores.get('email')?.hasError('required')">O campo é de preenchimento
+                    obrigatório!</ng-container>
+                <ng-container *ngIf="formUtilizadores.get('email')?.errors?.['email']">O e-mail não está em um formato
+                    válido!</ng-container>
+            </small>
+        </div>
+        <div class="col-md-6">
+            <label for="senha" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="senha" formControlName="senha"
+                placeholder="Mínimo 8 caracteres, letras Maiúsculas , minúsculas , caracter especial(símbolo) e números">
+            <small *ngIf="formUtilizadores.get('senha')?.touched && formUtilizadores.get('senha')?.invalid">
+                <ng-container *ngIf="formUtilizadores.get('senha')?.hasError('required')">O campo é de preenchimento
+                    obrigatório!</ng-container>
+                <ng-container *ngIf="formUtilizadores.get('senha')?.errors?.['minlength']">Formato INVÁLIDO - mínimo 8
+                    caracteres!</ng-container><br />
+                <ng-container *ngIf="formUtilizadores.get('senha')?.errors?.['pattern']">Formato INVÁLIDO - mínimo 1
+                    letra MAIÚSCULA, 1 minúscula, 1 caracter especial(símbolo) e números!</ng-container>
+            </small>
+        </div>
+        <div class="col-12">
+            <label for="morada" class="form-label">Morada</label>
+            <input type="text" class="form-control" id="morada" formControlName="morada"
+                placeholder="Rua/Av/Tv Nome da rua, 1234">
+            <small *ngIf="formUtilizadores.get('morada')?.touched && formUtilizadores.get('morada')?.invalid">
+                <ng-container *ngIf="formUtilizadores.get('morada')?.hasError('required')">O campo é de preenchimento
+                    obrigatório!</ng-container>
+                <ng-container *ngIf="formUtilizadores.get('morada')?.errors?.['minlength']">O campo tem de possuir no
+                    mínimo 5 caracteres!</ng-container>
+            </small>
+        </div>
+        <div class="col-md-2">
+            <label for="codigo_postal" class="form-label">Código Postal</label>
+            <input type="text" class="form-control" id="codigo_postal" formControlName="codigo_postal"
+                placeholder="ex: 1234-567">
+            <small
+                *ngIf="formUtilizadores.get('codigo_postal')?.touched && formUtilizadores.get('codigo_postal')?.invalid">
+                <ng-container *ngIf="formUtilizadores.get('codigo_postal')?.hasError('required')">O campo é de
+                    preenchimento obrigatório!</ng-container>
+                <ng-container *ngIf="formUtilizadores.get('codigo_postal')?.errors?.['minlength']">O campo tem de
+                    possuir no mínimo 5 caracteres!</ng-container>
+            </small>
+        </div>
+        <div class="col-md-4">
+            <label for="pais" class="form-label">País</label>
+            <select id="pais" class="form-select" formControlName="pais">
+                <option selected>Brasil</option>
+                <option selected>Portugal</option>
+                <option selected>Espanha</option>
+                <option selected>França</option>
+                <option selected>Alemanha</option>
+                <option selected>Inglaterra</option>
+                <option selected></option>
+            </select>
+            <small *ngIf="formUtilizadores.get('pais')?.touched && formUtilizadores.get('pais')?.invalid">
+                <ng-container *ngIf="formUtilizadores.get('pais')?.hasError('required')">O campo é de preenchimento
+                    obrigatório!</ng-container>
+            </small>
+        </div>
+        <div class="col-12 buttons">
+
+            <button type="submit" class="btn btn-success" id="cadastrar"
+                [disabled]="formUtilizadores.invalid">Registar</button>
+
+            <a id="home" href="home">Back to home</a>
+            
+        </div>
+    </form>
+</section>

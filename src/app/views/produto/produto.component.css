@@ -1,0 +1,161 @@
+@media screen and (max-width:900px) {
+    .alinhamento {
+      display: flex;
+      
+    }
+  }
+
+
+h1{
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;    
+    
+}
+h4{
+    color: red;
+}
+
+img{
+    width: 250px;
+    height: 350px;
+}
+
+input{
+    border: 1px solid black;
+}
+
+#th1{
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(222, 150, 16);
+    border-bottom: 3px solid black;    
+    color: white;
+}
+
+#th2{
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(239, 145, 13);
+    border-bottom: 3px solid black;
+    border-top: 3px solid black;
+    color: white;
+}
+
+.containermaster{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    
+}
+
+.containerfilter{
+    text-align: center;    
+    font-weight: bold;
+    width: 250px;
+    height: 100%;
+    border: 3px solid black;
+}
+
+.form-check{
+    display: flex;
+    margin-left: 50px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.modal-header{
+    text-align: center;
+}
+
+.container-fluid button {
+    background-color: black;
+}
+
+.fas{
+    color: red;
+
+}
+
+.ajustes{
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.alinhamento{
+    row-gap: 60px;
+    margin-bottom: 40px;
+}
+
+.container-fluid{
+    margin-top: 30px;
+    
+}
+.container-fluid h3{
+    font-weight: bold;
+    
+}
+
+.container-fluid h1{
+    font-weight: bold;
+    
+}
+
+.star{
+    font-size: 35px;
+    margin-left: 250px;
+}
+
+.star #preenchida{
+    display: none;
+}
+
+.configpagination{
+    background-color: black;
+    color: whitesmoke;
+    border: 2px solid white;
+}
+
+#imgsecundaria{
+    display: none;
+
+}
+
+#imagens:hover #imgsecundaria{
+    display: inline;
+}
+
+#imagens:hover #imgprincipal{
+    display: none;
+}
+
+#detalheproduto{
+    font-size: 20px;
+    text-align: center;
+}
+
+#detalheproduto #marca{
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+#detalheproduto #nome{
+    font-size: 35px;
+}
+
+#detalheproduto img{
+   padding: 20px;
+}
+
+#detalheproduto #tipo, #preco, #descricao{
+    font-size: 28px;
+    padding: 10px;
+    width: 900px;
+    margin: auto;
+}
+
+#descricao{
+    margin-bottom: 150px;
+}
+

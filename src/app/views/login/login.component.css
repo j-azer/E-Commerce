@@ -1,0 +1,75 @@
+section{
+    position: relative;
+    background-color: rgba(177, 173, 173, 0.118);
+    width: auto;
+    height: 70vh;
+}
+
+.close{    
+    position: relative;
+    background-color: white;
+    width: 900px;
+    height: 540px;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.616);
+}
+
+
+.close p button{
+    position: absolute;
+    font-size: 25px;
+    border: 2px black solid;
+    font-weight: bold;
+    background-color:white;
+    border-radius: 28px;
+    box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.616);
+    padding: 2px 10px;
+    margin-left: 855px;
+    top: 0;
+}
+
+.close p button:hover{
+    color: white;
+    border: 2px white solid;
+    background-color:red;
+    border-radius: 25px;
+
+}
+
+form{
+    display: inline;
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+small{
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(131, 127, 127);
+}
+
+button{
+    font-size: 25px;
+}
+
+.buttons{
+    margin-top: 50px;
+}
+
+.buttons a{
+    color: rgb(113, 112, 112);
+    text-decoration: none;
+}
+
+.buttons a:hover{
+    color: rgb(161, 156, 156);
+    text-decoration: underline;
+}
+
+.buttons #registo{
+    margin-left: 60px;
+}

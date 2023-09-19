@@ -1,0 +1,17 @@
+<h1 id="h1">Wishlist</h1>
+
+
+    <div id="alinhamento" class="container-fluid alinhamento" *ngFor="let produto of listaWish">
+        <div>
+            <img id="imgprincipal" class="img-fluid" src="/assets/pictures/{{ produto.foto_principal }}"
+                alt="produtos variados">
+        </div>
+        <div id="alinhamento2" class="alinhamento2">
+            <h3>{{produto.marca}}</h3>
+            <h5>{{produto.nome}}</h5>
+            <h2>{{produto.preco}}€</h2>
+        </div>
+        <div>
+            <button class="btn btn-danger" (click)="excluirWish(produto.id!)">Remover</button>
+        </div>
+    </div>

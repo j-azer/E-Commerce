@@ -1,0 +1,56 @@
+@media screen and (max-width: 1000px) {
+    #h1{
+        font-size: 30px;
+    }
+    
+    #alinhamento{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 80px;
+    }
+
+    #alinhamento2{
+        padding: 20px;
+    }
+
+  }
+
+
+h1{
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+h2{
+    font-weight: bold;
+    font-size: 40px;
+}
+
+button{
+    font-size: 20px;
+    font-weight: bold;
+    width: 200px;
+}
+.alinhamento{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;    
+    column-gap: 100px;
+    margin-bottom: 40px;
+}
+
+.alinhamento2{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#imgprincipal{
+    width: 200px;    
+}
